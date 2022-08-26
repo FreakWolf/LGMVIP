@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Alike&display=swap');
+
+:root {
+  --bg: #7596f9;
+  --color: #000000;
+}
+body{
+  background-color: black;
+}
+
+* {
+  margin: 2%;
+  padding: 1%;
+  border-radius: 15px;
+  box-sizing: border-box;
+  font-family: 'Alike', serif;
+}
+
+.container {
+  width: 100%;
+  background: linear-gradient(rgba(253, 113, 241, 0.7), rgba(102, 219, 252, 0.7)), url('https://my4kwallpapers.com/wp-content/uploads/2021/12/Hacker-Background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding-bottom: 20px;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+}
+
+header nav {
+  display: block;
+  margin-bottom: 20px;
+  background: var(--bg);
+  color: var(--color);
+  padding: 6px 0;
+  font-size: 4.4vmin;
+}
+
+header nav.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+header .buttons {
+  display: block;
+}
+
+header .btn {
+  background: var(--bg);
+  border: 1.4px solid var(--bg);
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 16px;
+  transition: 0.4s;
+}
+
+header #next-users,
+header #hide-users {
+  display: none;
+}
+
+header .btn i {
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+header .btn:hover {
+  background: transparent;
+}
+
+/* SECTION */
+#users {
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 20px;
+  padding: 10px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#count {
+  margin-top: 5px;
+  font-size: 20px;
+  text-align: center;
+}
+
+#row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+}
+
+.card {
+  width: 250px;
+  height: auto;
+  border: 2px solid var(--color);
+  border-radius: 20px;
+  margin: 10px;
+  transition: transform 0.5s;
+  color: var(--color);
+}
+
+.card img {
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.card .desc {
+  margin: 10px 14px;
+  font-size: 16px;
+}
+
+.card .desc p {
+  line-height: 1.8rem;
+}
+
+.card:hover {
+  transform: translateY(-15px);
+}
+
+.loader {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loader .loader-glass {
+  width: 180px;
+  height: 180px;
+  animation: load 2s linear infinite;
+  border-radius: 50%;
+}
+
+.loader span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: rgb(145, 145, 145);
+  animation: text 2s infinite;
+}
+
+@keyframes text {
+  50% {
+    color: #102030;
+    font-size: 20px;
+  }
+}
+
+@keyframes load {
+
+  0% {
+    transform: rotate(0deg);
+    border-top: 6px solid #e61f00;
+  }
+
+  25% {
+    transform: rotate(90deg);
+    border-top: 6px solid #2ae600;
+  }
+
+  50% {
+    transform: rotate(180deg);
+    border-top: 6px solid #e65c00;
+  }
+
+  75% {
+    transform: rotate(270deg);
+    border-top: 6px solid #0400e6;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    border-top: 6px solid #e60000;
+  }
+}
+
+@media only screen and (max-width:700px) {
+  #users {
+    width: 100%;
+  }
+
+  header .btn {
+    font-size: 16px;
+  }
+
+  header .btn i {
+    font-size: 12px;
+  }
+
+  #row {
+    grid-template-columns: auto;
+  }
+
+  .card {
+    width: 300px;
+  }
+}
+
+body::-webkit-scrollbar {
+  background: white;
+  width: 6px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #102030;
+  border-radius: 10px;
+}
